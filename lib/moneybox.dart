@@ -1,9 +1,10 @@
 import 'package:material_ui/material_ui.dart';
+import 'package:intl/intl.dart';
 
 class Moneybox extends StatelessWidget{
 
   String title;
-  String amount;
+  double amount;
   Color color;
   double size;
 
@@ -27,7 +28,9 @@ class Moneybox extends StatelessWidget{
                       )
                     ),
                   Expanded(
-                    child: Text(amount.toString(), style: TextStyle(
+                    child: Text(
+                      NumberFormat("#,##0.00").format(amount),
+                        style: TextStyle(
                           fontSize: 25,
                           color: Colors.white,
                           fontWeight: FontWeight.bold,
